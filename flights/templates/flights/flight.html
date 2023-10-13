@@ -2,6 +2,7 @@
 
 {% block body %}
 <h1>Flight {{ flightRequested.id }}</h1>
+<a href="{% url "index" %}">Home</a>
 <ul>
     <li>Origin: {{ flightRequested.origin }}</li>
     <li>Destination: {{ flightRequested.destination }}</li>
