@@ -13,4 +13,16 @@
 <li>{{ passenger }}</li>
 {% endfor %}
 </ul>
+
+<h2>Add passenger</h2>
+
+<form action="{% url "book" flightRequested.id %}" method="post">
+    {% csrf_token %}
+    <select name="passenger" id="">
+        {% for non_passenger in non_passengers %}
+        <option value="{{non_passenger.id}}">{{non_passenger}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
 {% endblock body %}
